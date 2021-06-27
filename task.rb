@@ -5,8 +5,8 @@ def q1
   names = ["田中", "佐藤", "佐々木", "高橋"]
 
   # 以下に回答を記載
-  names = ["田中", "佐藤", "佐々木", "高橋", "斉藤"]
-  puts names
+  names << "齋藤"
+  print names
 end
 
 def q2
@@ -22,18 +22,14 @@ def q3
   numbers = [1, 5, 8, 10, 2, 3, 2, 3, 3, 1, 4, 5, 9]
 
   # 以下に回答を記載
-  puts numbers[5]
-  puts numbers[7]
-  puts numbers[8]
-  puts ""
-  puts "3は3個あります。"
+  p numbers.count(3)
 end
 
 def q4
   sports = ["サッカー", "フットサル", nil, "野球", "バスケ", nil, "バレー"]
 
   # 以下に回答を記載
-  puts sports.delete(nil)
+  sports.compact!
   # 以下は変更しないで下さい
   p sports
 end
@@ -43,23 +39,27 @@ def q5
   array2 = [1, 5, 8, 10]
 
   # 以下に回答を記載
-  array = []
-
-  p array == array1
-  p array == array2
+  p array1.empty?
+  p array2.empty?
 end
 
 def q6
   numbers1 = [1, 2, 3, 4, 5]
 
   # 以下に回答を記載
-
+  numbers2 = [10, 20, 30, 40, 50]
+  numbers2.each do |number|
+    puts "#{number}"
+  end
 end
 
 def q7
   array = ["1", "2", "3", "4", "5"]
 
   # 以下に回答を記載
+  array.each do |integer|
+    puts "#{integer}"
+  end
 
   # 以下は変更しないで下さい
   p array
