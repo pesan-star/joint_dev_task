@@ -99,9 +99,10 @@ def q11
   sports = ["サッカー", "バスケ", "野球", ["フットサル", "野球"], "水泳", "ハンドボール", ["卓球", "サッカー", "ボルダリング"]]
 
   # 以下に回答を記載
-  sports2 = sports.flatten
-  sports_list = sports2.uniq
-  sports_list.each.with_index(1) do |list, i|
+  puts "ユーザーの趣味一覧"
+  sports.flatten!
+  sports.uniq!
+  sports.each.with_index(1) do |list, i|
     puts "No#{i} #{list}"
   end
 end
