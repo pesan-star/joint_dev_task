@@ -85,7 +85,7 @@ def q10
 
   # 以下に回答を記載
   foods.each do |food|
-    if foods.include?("うに")
+    if food.include?("うに")
       puts "#{food}:好物です"
     else
       puts "#{food}:まぁまぁ好きです"
@@ -116,17 +116,16 @@ def q13
   update_data = { age: 32, address: "沖縄" }
 
   # 以下に回答を記載
-  updated_data = user_data.merge(update_data)
-  p updated_data  
+  user_data = user_data.merge(update_data)
+  p user_data
 end
 
 def q14
   data = { name: "satou", age: 33, address: "saitama", hobby: "soccer", email: "hoge@fuga.com" }
 
   # 以下に回答を記載
-  data.each_key do |key|
-    puts "キー:#{key}"
-  end
+  key = data.keys
+  p key
 end
 
 def q15
@@ -148,12 +147,12 @@ def q16
   ]
 
   # 以下に回答を記載
-  users.each do |name, age|
-    puts "私の名前は#{name}です。年齢は#{age}歳です。"
+ users.each do |values|
+  a = values[:name]
+  b = values[:age]
+  puts "私の名前は#{a}です。年齢は#{b}歳です。"
 
-  end
-  
-
+end
 end
 
 class UserQ17
