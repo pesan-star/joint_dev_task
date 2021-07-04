@@ -84,14 +84,12 @@ def q10
   foods = %w(いか たこ うに しゃけ うにぎり うに軍艦 うに丼)
 
   # 以下に回答を記載
-  foods_a = foods.select { |x| x.include?("うに") }
-  foods_a.each do |food_a|
-    puts "#{food_a} 「好物です」"
-  end
-
-  foods_b = foods.reject { |x| x.include?("うに") }
-  foods_b.each do |food_b|
-    puts "#{food_b} 「まぁまぁ好きです」"
+  foods.each do |food|
+    if foods.include?("うに")
+      puts "#{food}:好物です"
+    else
+      puts "#{food}:まぁまぁ好きです"
+    end
   end
 end
 
@@ -100,8 +98,7 @@ def q11
 
   # 以下に回答を記載
   puts "ユーザーの趣味一覧"
-  sports.flatten!
-  sports.uniq!
+  sports.flatten!.uniq!
   sports.each.with_index(1) do |list, i|
     puts "No#{i} #{list}"
   end
@@ -137,17 +134,9 @@ def q15
   data2 = { name: "yamada", hobby: "baseball", role: "normal" }
 
   # 以下に回答を記載
-  if data1.has_key?(:age)
-   puts "OK"
-  else 
-   puts "NG"
-  end
-
-  if data2.has_key?(:age)
-   puts "OK"
-  else 
-   puts "NG"
-  end
+  puts data1.has_key?(:age) ? "OK" : "NG"
+  puts data2.has_key?(:age) ? "OK" : "NG"
+   
 end
 
 def q16
